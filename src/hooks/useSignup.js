@@ -12,7 +12,7 @@ export const useSignup = () => {
     setError(false);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/user/signup",
+        process.env + "/user/signup",
         JSON.stringify({ email, password }),
         {
           headers: {

@@ -12,7 +12,7 @@ export const useLogin = () => {
     setError(false);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/user/login",
+        process.env+"/user/login",
         JSON.stringify({ email, password }),
         {
           headers: {
