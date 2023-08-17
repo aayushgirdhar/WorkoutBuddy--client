@@ -12,7 +12,7 @@ export const useSignup = () => {
     setError(false);
     try {
       const res = await axios.post(
-        process.env + "/user/signup",
+        process.env.REACT_APP_API_URL + "/user/signup",
         JSON.stringify({ email, password }),
         {
           headers: {

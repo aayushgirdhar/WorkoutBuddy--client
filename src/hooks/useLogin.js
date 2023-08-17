@@ -12,7 +12,7 @@ export const useLogin = () => {
     setError(false);
     try {
       const res = await axios.post(
-        process.env+"/user/login",
+        process.env.REACT_APP_API_URL +"/user/login",
         JSON.stringify({ email, password }),
         {
           headers: {
