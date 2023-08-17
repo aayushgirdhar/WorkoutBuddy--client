@@ -21,7 +21,7 @@ const WorkoutForm = () => {
     try {
       const workout = { title, load, reps };
       const res = await axios.post(
-        "http://localhost:5000/api/workouts",
+        process.env.REACT_APP_API_URL + "/workouts",
         JSON.stringify(workout),
         {
           headers: {

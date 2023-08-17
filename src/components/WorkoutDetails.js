@@ -13,15 +13,15 @@ const WorkoutDetails = ({ workout }) => {
     }
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/workouts/${workout._id}`,
+        process.env.REACT_APP_API_URL + `/workouts/${workout._id}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
         }
       );
-      console.log(res.data._id)
-      if (res.statusText === 'OK') {
+      console.log(res.data._id);
+      if (res.statusText === "OK") {
         dispatch({ action: "DELETE_WORKOUT", payload: res.data._id });
       }
     } catch (err) {

@@ -12,11 +12,14 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/workouts", {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
+        const res = await axios.get(
+          process.env.REACT_APP_API_URL + "/workouts",
+          {
+            headers: {
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         if (res.statusText === "OK") {
           dispatch({ type: "SET_WORKOUTS", payload: res.data });
         }
