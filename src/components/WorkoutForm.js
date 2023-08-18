@@ -30,7 +30,7 @@ const WorkoutForm = () => {
           },
         }
       );
-      if (res.statusText === 200) {
+      if (res.status === 200) {
         console.log("New workout added", res.data);
         dispatch({ type: "CREATE_WORKOUT", payload: res.data });
         setTitle("");
