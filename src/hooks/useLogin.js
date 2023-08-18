@@ -20,9 +20,7 @@ export const useLogin = () => {
           },
         }
       );
-      console.log(res)
       if (res.status === 200) {
-        console.log("res status ok");
         //save the user to localstorage
         localStorage.setItem("user", JSON.stringify(res.data));
 
