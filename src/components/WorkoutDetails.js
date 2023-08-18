@@ -21,7 +21,7 @@ const WorkoutDetails = ({ workout }) => {
         }
       );
       console.log(res.data._id);
-      if (res.statusText === "OK") {
+      if (res.status === 200) {
         dispatch({ action: "DELETE_WORKOUT", payload: res.data._id });
       }
     } catch (err) {

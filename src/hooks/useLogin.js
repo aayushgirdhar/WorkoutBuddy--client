@@ -12,7 +12,7 @@ export const useLogin = () => {
     setError(false);
     try {
       const res = await axios.post(
-        process.env.REACT_APP_API_URL +"/user/login",
+        process.env.REACT_APP_API_URL + "/user/login",
         JSON.stringify({ email, password }),
         {
           headers: {
@@ -20,7 +20,9 @@ export const useLogin = () => {
           },
         }
       );
-      if (res.statusText === "OK") {
+      console.log(res)
+      if (res.status === 200) {
+        console.log("res status ok");
         //save the user to localstorage
         localStorage.setItem("user", JSON.stringify(res.data));
 

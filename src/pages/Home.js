@@ -20,7 +20,7 @@ const Home = () => {
             },
           }
         );
-        if (res.statusText === "OK") {
+        if (res.status === 200) {
           dispatch({ type: "SET_WORKOUTS", payload: res.data });
         }
       } catch (err) {
